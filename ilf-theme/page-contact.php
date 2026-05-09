@@ -7,8 +7,8 @@ if (!defined('ABSPATH')) exit;
 get_header();
 
 $charity_number = ilf_option('charity_number', '1166693');
-$address        = ilf_option('address', "20 Young Street, Hartlepool\nTS26 8BS, United Kingdom");
-$phone          = ilf_option('phone', '07446 642 464');
+$address        = ilf_option('address', "20 Young Street\nHartlepool\nTS26 8BS\nEngland\nUnited Kingdom");
+$phone          = ilf_option('phone', '+447446642464');
 $email          = ilf_option('email', 'inloveandfaith2025@gmail.com');
 $office_hours   = ilf_option('office_hours', "Monday – Friday: 9:00 AM – 5:00 PM\nSaturday & Sunday: Closed");
 $cf7_shortcode  = ilf_option('cf7_shortcode', '');

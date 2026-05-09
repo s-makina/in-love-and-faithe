@@ -4,8 +4,8 @@
  */
 if (!defined('ABSPATH')) exit;
 
-$address = ilf_option('address', "20 Young Street\nHartlepool\nTS26 8BS\nUnited Kingdom");
-$phone   = ilf_option('phone', '07446 642 464');
+$address = ilf_option('address', "20 Young Street\nHartlepool\nTS26 8BS\nEngland\nUnited Kingdom");
+$phone   = ilf_option('phone', '+447446642464');
 $email   = ilf_option('email', 'inloveandfaith2025@gmail.com');
 ?>
 

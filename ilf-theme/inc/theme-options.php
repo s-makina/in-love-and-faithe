@@ -80,7 +80,7 @@ function ilf_settings_page() {
             <table class="form-table">
                 <tr>
                     <th><label for="phone">Phone</label></th>
-                    <td><input type="text" id="phone" name="ilf_options[phone]" value="<?php echo esc_attr($opts['phone'] ?? '07446 642 464'); ?>" class="regular-text"></td>
+                    <td><input type="text" id="phone" name="ilf_options[phone]" value="<?php echo esc_attr($opts['phone'] ?? '+447446642464'); ?>" class="regular-text"></td>
                 </tr>
                 <tr>
                     <th><label for="email">Email</label></th>
@@ -88,7 +88,7 @@ function ilf_settings_page() {
                 </tr>
                 <tr>
                     <th><label for="address">Address</label></th>
-                    <td><textarea id="address" name="ilf_options[address]" rows="4" class="large-text"><?php echo esc_textarea($opts['address'] ?? "20 Young Street\nHartlepool\nTS26 8BS\nUnited Kingdom"); ?></textarea></td>
+                    <td><textarea id="address" name="ilf_options[address]" rows="4" class="large-text"><?php echo esc_textarea($opts['address'] ?? "20 Young Street\nHartlepool\nTS26 8BS\nEngland\nUnited Kingdom"); ?></textarea></td>
                 </tr>
                 <tr>
                     <th><label for="office_hours">Office Hours</label></th>

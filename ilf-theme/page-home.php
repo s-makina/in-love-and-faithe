@@ -17,7 +17,7 @@ $hero_main_id = ilf_option('hero_main_image');
 $hero_edu_id  = ilf_option('hero_edu_image');
 $hero_comm_id = ilf_option('hero_comm_image');
 
-$hero_main_url = $hero_main_id ? wp_get_attachment_image_url($hero_main_id, 'hero-bg') : ILF_URI . '/assets/images/hero-banner.png';
+$hero_main_url = $hero_main_id ? wp_get_attachment_image_url($hero_main_id, 'hero-bg') : ILF_URI . '/assets/images/banner-image.jpeg';
 $hero_edu_url  = $hero_edu_id ? wp_get_attachment_image_url($hero_edu_id, 'pillar-thumb') : ILF_URI . '/assets/images/education.png';
 $hero_comm_url = $hero_comm_id ? wp_get_attachment_image_url($hero_comm_id, 'pillar-thumb') : ILF_URI . '/assets/images/community.png';
 ?>
