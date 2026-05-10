@@ -35,6 +35,17 @@ $email   = ilf_option('email', 'inloveandfaith2025@gmail.com');
         <h3>Email</h3>
         <p><a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a></p>
       </div>
+
+      <div class="contact-card fade-in">
+        <div class="contact-icon">🏦</div>
+        <h3>Bank Details</h3>
+        <p class="bank-details">
+          <strong>ILF Charity</strong><br>
+          Business Current<br>
+          <span class="bank-acct">51839024</span><br>
+          <span class="bank-sort">60-13-28</span>
+        </p>
+      </div>
     </div>
   </div>
 </section>

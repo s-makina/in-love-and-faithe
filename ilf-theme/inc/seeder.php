@@ -80,10 +80,10 @@ function ilf_seed_content() {
 
     // ── Trustees ──────────────────────────────────────────────
     $trustees = [
-        ['name' => 'Maria-Rosa Matunhike', 'initials' => 'MR', 'role' => 'Trustee', 'date' => '15 July 2024'],
-        ['name' => 'Dr Joyce Banda',       'initials' => 'JB', 'role' => 'Trustee', 'date' => '01 July 2025'],
-        ['name' => 'Patience Sibusiwe Chigumira', 'initials' => 'PS', 'role' => 'Trustee', 'date' => '01 July 2025'],
-        ['name' => 'Annah Mvundura',       'initials' => 'AM', 'role' => 'Trustee', 'date' => '26 November 2025'],
+        ['name' => 'Elizabeth Abiti Makwinja', 'initials' => 'EM', 'role' => 'Founder & Ambassador, Evangelist Missionary', 'date' => '', 'photo' => ILF_URI . '/assets/images/elizabeth-makwinja.jpeg'],
+        ['name' => 'Joyce Banda',              'initials' => 'JB', 'role' => 'Trustee, H.E Former President of Republic of Malawi', 'date' => '', 'photo' => ILF_URI . '/assets/images/joyce-banda.jpeg'],
+        ['name' => 'Marisa',                   'initials' => 'MA', 'role' => 'Secretary', 'date' => '', 'photo' => ILF_URI . '/assets/images/marisa.jpeg'],
+        ['name' => 'Patience Chigumira',       'initials' => 'PC', 'role' => 'Treasurer', 'date' => '', 'photo' => ILF_URI . '/assets/images/patience-chigumira.jpeg'],
     ];
 
     foreach ($trustees as $i => $t) {
@@ -97,6 +97,7 @@ function ilf_seed_content() {
             update_post_meta($pid, '_ilf_trustee_initials', $t['initials']);
             update_post_meta($pid, '_ilf_trustee_role', $t['role']);
             update_post_meta($pid, '_ilf_trustee_date', $t['date']);
+            update_post_meta($pid, '_ilf_trustee_photo', $t['photo']);
         }
     }
 

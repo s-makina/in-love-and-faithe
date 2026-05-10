@@ -31,13 +31,31 @@ $is_about = is_page_template('page-about.php');
 
     <div class="trustees-grid stagger-children">
       <?php $i = 1; while ($trustees->have_posts()) : $trustees->the_post();
-        $initials = get_post_meta(get_the_ID(), '_ilf_trustee_initials', true);
-        $role     = get_post_meta(get_the_ID(), '_ilf_trustee_role', true);
-        $date     = get_post_meta(get_the_ID(), '_ilf_trustee_date', true);
-        $t_class  = 't' . (($i - 1) % 4 + 1);
+        $initials   = get_post_meta(get_the_ID(), '_ilf_trustee_initials', true);
+        $role       = get_post_meta(get_the_ID(), '_ilf_trustee_role', true);
+        $date       = get_post_meta(get_the_ID(), '_ilf_trustee_date', true);
+        $photo_url  = get_post_meta(get_the_ID(), '_ilf_trustee_photo', true);
+        $thumb_id   = get_post_thumbnail_id(get_the_ID());
+        $t_class    = 't' . (($i - 1) % 4 + 1);
+
+        // Priority: featured image > photo meta > initials fallback
+        $has_photo = false;
+        if ($thumb_id) {
+            $img_src = wp_get_attachment_image_url($thumb_id, 'trustee-photo');
+            $has_photo = true;
+        } elseif ($photo_url) {
+            $img_src = $photo_url;
+            $has_photo = true;
+        }
       ?>
       <div class="trustee-card fade-in">
-        <div class="trustee-avatar <?php echo esc_attr($t_class); ?>"><?php echo esc_html($initials); ?></div>
+        <div class="trustee-avatar <?php echo esc_attr($t_class); ?><?php echo $has_photo ? ' has-photo' : ''; ?>">
+          <?php if ($has_photo) : ?>
+            <img src="<?php echo esc_url($img_src); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="trustee-photo">
+          <?php else : ?>
+            <?php echo esc_html($initials); ?>
+          <?php endif; ?>
+        </div>
         <h3><?php the_title(); ?></h3>
         <div class="trustee-role"><?php echo esc_html($role ?: 'Trustee'); ?></div>
         <?php if ($date) : ?>

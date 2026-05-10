@@ -18,7 +18,7 @@ function ilf_register_post_types() {
         'public'       => false,
         'show_ui'      => true,
         'show_in_menu' => 'ilf-settings',
-        'supports'     => ['title', 'page-attributes'],
+        'supports'     => ['title', 'thumbnail', 'page-attributes'],
         'menu_icon'    => 'dashicons-groups',
         'has_archive'  => false,
     ]);

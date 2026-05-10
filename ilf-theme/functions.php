@@ -30,6 +30,7 @@ function ilf_setup() {
     add_image_size('hero-bg', 1920, 1080, true);
     add_image_size('pillar-thumb', 800, 500, true);
     add_image_size('about-thumb', 800, 450, true);
+    add_image_size('trustee-photo', 300, 300, true);
 }
 add_action('after_setup_theme', 'ilf_setup');
 

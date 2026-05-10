@@ -27,6 +27,7 @@ function ilf_trustee_meta_cb($post) {
     $initials = get_post_meta($post->ID, '_ilf_trustee_initials', true);
     $role     = get_post_meta($post->ID, '_ilf_trustee_role', true);
     $date     = get_post_meta($post->ID, '_ilf_trustee_date', true);
+    $photo    = get_post_meta($post->ID, '_ilf_trustee_photo', true);
     ?>
     <table class="form-table">
         <tr>
@@ -40,6 +41,10 @@ function ilf_trustee_meta_cb($post) {
         <tr>
             <th><label for="ilf_trustee_date">Appointed Date</label></th>
             <td><input type="text" id="ilf_trustee_date" name="ilf_trustee_date" value="<?php echo esc_attr($date); ?>" class="regular-text" placeholder="e.g. 15 July 2024"></td>
+        </tr>
+        <tr>
+            <th><label for="ilf_trustee_photo">Photo URL</label></th>
+            <td><input type="text" id="ilf_trustee_photo" name="ilf_trustee_photo" value="<?php echo esc_attr($photo); ?>" class="regular-text" placeholder="Fallback image URL (used if no featured image set)"><p class="description">Overrides initials avatar. Upload a featured image for WordPress-managed photos.</p></td>
         </tr>
     </table>
     <?php
@@ -116,6 +121,7 @@ function ilf_save_meta_boxes($post_id) {
         if (isset($_POST['ilf_trustee_initials'])) update_post_meta($post_id, '_ilf_trustee_initials', sanitize_text_field($_POST['ilf_trustee_initials']));
         if (isset($_POST['ilf_trustee_role']))     update_post_meta($post_id, '_ilf_trustee_role', sanitize_text_field($_POST['ilf_trustee_role']));
         if (isset($_POST['ilf_trustee_date']))     update_post_meta($post_id, '_ilf_trustee_date', sanitize_text_field($_POST['ilf_trustee_date']));
+        if (isset($_POST['ilf_trustee_photo']))    update_post_meta($post_id, '_ilf_trustee_photo', esc_url_raw($_POST['ilf_trustee_photo']));
     }
 
     // Pillar
