@@ -48,10 +48,10 @@ $is_about = is_page_template('page-about.php');
             $has_photo = true;
         }
       ?>
-      <div class="trustee-card fade-in">
+      <div class="trustee-card<?php echo $i === 1 ? ' trustee-card--featured' : ''; ?> fade-in">
         <div class="trustee-avatar <?php echo esc_attr($t_class); ?><?php echo $has_photo ? ' has-photo' : ''; ?>">
           <?php if ($has_photo) : ?>
-            <img src="<?php echo esc_url($img_src); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="trustee-photo">
+            <img src="<?php echo esc_url($img_src); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
           <?php else : ?>
             <?php echo esc_html($initials); ?>
           <?php endif; ?>
